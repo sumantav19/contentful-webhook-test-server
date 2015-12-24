@@ -11,7 +11,7 @@ router.post('/',function(request,response){
 	//response.status(200).send(request.header);
 	if(request.headers['x-contentful-topic'] && request.headers['x-contentful-topic'] === 'ContentManagement.Entry.publish'){
 		
-		fs.writeFile('./test-file-folder/test-file.txt',request.body.sys || 'test for content ful',function(err){
+		fs.writeFile('./test-file-folder/test-file.txt',request.body.sys.id || 'test for content ful',function(err){
 			if(err){
 				return response.status(500);
 			}
