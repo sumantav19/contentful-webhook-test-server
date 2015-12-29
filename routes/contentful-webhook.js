@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(request,response){
-	console.log(request.body);
+	console.log(request.body.fields);
 	
 	if(request.headers['x-contentful-topic'] && request.headers['x-contentful-topic'] === 'ContentManagement.Entry.publish'){
 		

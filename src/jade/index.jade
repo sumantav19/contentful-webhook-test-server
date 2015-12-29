@@ -1,5 +1,7 @@
--var testString = [sys,fields]
+doctype html
 html
-	body	
-		p=fields.blogTitle.en-US
-		p=fields.blogBody.en-US
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  	= #{fields}
