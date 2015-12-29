@@ -14,13 +14,14 @@ router.post('/',function(request,response){
 		
 		gulp.task('templates',function(){
 			console.log('task Running');
-			gulp.src(['../src/jade/*.jade'])
+			gulp.src(['./src/jade/*.jade'])
 				.pipe(gulpjade(function(file){
 					return request.body;
 				}))
 				.pipe(gulpjade( {pretty: true}))
-				.pipe(gulp.dest('../public/'));
+				.pipe(gulp.dest('./public/'));
 		})
+		console.log('task will be called');
 		gulp.start('templates');
 
 		fs.writeFile('./test-file-folder/test-file.txt',request.body || 'test for content ful',function(err){
